@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prediction du salaire</title>
+        <link rel="stylesheet"  href="learning.css">
+    </head>
+    <body>
+        <h1>predisez le salaire des enseignants de votre choix</h1>
+        <form action="/salaryapp/predict/" method="POST">
+            {% csrf_token %}
+            <label>Allocation familliale</label>
+            <input type="number" name="alloc_fam"/><br><br>
+            <label>Niveau Etude</label>
+            <input type="radio" name="niv_etud" value="2">Diplomé</input>
+            <input type="radio" name="niv_etud" value="3">Gradué</input>
+            <input type="radio" name="niv_etud" value="5">Licencié<i/input>
+            <input type="radio" name="niv_etud" value="7">Master</input>
+            <input type="radio" name="niv_etud" value="10">Docteur</input>
+            <br><br>
+            <label>Type Ecole</label>
+            <input type="radio" name="type_ecole" value="1">prive</input>
+            <input type="radio" name="type_ecole" value="2">public</input>
+            <br><br>
+            <label>Age</label>
+            <input type="number" name="age"/>
+            <br><br>
+            <label>Experience Prof</label>
+            <input type="number" name="ann_exp"></input>
+            <br><br>
+            <input type="submit" value="Predire"/>
+        </form>
+
+        <style>
+           body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: aqua;
+  }
+  
+  h1 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+  }
+  
+  form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    margin: 1em 0 0.5em;
+    font-weight: bold;
+  }
+  
+  input[type="number"],
+  input[type="radio"],
+  input[type="submit"] {
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  input[type="radio"] {
+    margin-right: 1em;
+  }
+  
+  input[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 1em;
+  }
+
+        </style>
+    </body>
+</html>
